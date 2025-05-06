@@ -1,14 +1,13 @@
 using ClimFit.Abstractions.BusinessEntityServiceInterfaces;
 using ClimFit.Common.DTOs;
-using Microsoft.AspNetCore.Mvc;
 
 namespace ClimFit.Api.Controllers.ApiControllers
 {
-    public class WeatherLogApiController : BaseApiController<WeatherLogDto, IWeatherLogService>
+    public class WeatherLogApiController : BaseApiController<WeatherLogDto, IWeatherLogEntityService>
     {
-        private readonly IWeatherLogService _weatherLogService;
+        private readonly IWeatherLogEntityService _weatherLogService;
 
-        public WeatherLogApiController(IWeatherLogService weatherLogService) : base(weatherLogService)
+        public WeatherLogApiController(IWeatherLogEntityService weatherLogService) : base(weatherLogService)
         {
             _weatherLogService = weatherLogService;
         }
