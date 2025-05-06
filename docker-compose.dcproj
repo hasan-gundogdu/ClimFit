@@ -7,7 +7,7 @@
     <ProjectGuid>3c24ffbd-41b8-47d2-9645-d5ff2de0bbdd</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
-    <DockerServiceName>CoreArchitecture.api</DockerServiceName>
+    <DockerServiceName>ClimFit.api</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">
