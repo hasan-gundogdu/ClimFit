@@ -11,12 +11,5 @@ namespace ClimFit.Api.Controllers.ApiControllers
         {
             _weatherLogService = weatherLogService;
         }
-
-        [HttpGet]
-        public async override Task<IActionResult> Get()
-        {
-            var res = await _weatherLogService.GetWhereAsync(x => x.Date != default);
-            return Ok(res);
-        }
     }
 } 

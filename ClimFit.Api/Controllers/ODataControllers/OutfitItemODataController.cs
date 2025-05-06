@@ -13,13 +13,5 @@ namespace ClimFit.Api.Controllers.ODataControllers
         {
             _outfitItemEntityService = outfitItemEntityService;
         }
-
-        [HttpGet]
-        [EnableQuery]
-        public async override Task<IActionResult> Get()
-        {
-            var res = await _outfitItemEntityService.GetWhereAsync(x => x.OutfitSuggestionId != Guid.Empty);
-            return Ok(res);
-        }
     }
 } 

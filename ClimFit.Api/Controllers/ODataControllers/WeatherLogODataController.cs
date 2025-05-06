@@ -13,13 +13,5 @@ namespace ClimFit.Api.Controllers.ODataControllers
         {
             _weatherLogEntityService = weatherLogEntityService;
         }
-
-        [HttpGet]
-        [EnableQuery]
-        public async override Task<IActionResult> Get()
-        {
-            var res = await _weatherLogEntityService.GetWhereAsync(x => x.Date != default);
-            return Ok(res);
-        }
     }
 } 

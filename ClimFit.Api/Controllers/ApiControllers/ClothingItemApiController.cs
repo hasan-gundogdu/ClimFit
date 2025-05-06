@@ -12,12 +12,5 @@ namespace ClimFit.Api.Controllers.ApiControllers
         {
             _clothingItemService = clothingItemService;
         }
-
-        [HttpGet]
-        public async override Task<IActionResult> Get()
-        {
-            var res = await _clothingItemService.GetWhereAsync(x => x.Name.Contains("test"));
-            return Ok(res);
-        }
     }
 } 
