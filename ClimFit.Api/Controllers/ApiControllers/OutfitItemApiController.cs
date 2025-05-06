@@ -4,11 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ClimFit.Api.Controllers.ApiControllers
 {
-    public class OutfitItemApiController : BaseApiController<OutfitItemDto, IOutfitItemService>
+    public class OutfitItemApiController : BaseApiController<OutfitItemDto, IOutfitItemEntityService>
     {
-        private readonly IOutfitItemService _outfitItemService;
+        private readonly IOutfitItemEntityService _outfitItemService;
 
-        public OutfitItemApiController(IOutfitItemService outfitItemService) : base(outfitItemService)
+        public OutfitItemApiController(IOutfitItemEntityService outfitItemService) : base(outfitItemService)
         {
             _outfitItemService = outfitItemService;
         }
