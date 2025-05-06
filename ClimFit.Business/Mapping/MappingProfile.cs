@@ -14,6 +14,12 @@ namespace ClimFit.Business.Mapping
                 .ForMember(dest => dest.DepartmentName, opt => opt.MapFrom(src => src.Department!.Name))
                 .ForMember(dest => dest.PersonDepartment, opt => opt.MapFrom(src => src.Department))
                 .ReverseMap();
+
+            CreateMap<ClothingItem, ClothingItemDto>().ReverseMap();
+
+            CreateMap<OutfitItem, OutfitItemDto>().ReverseMap();
+            CreateMap<OutfitSuggestion, OutfitSuggestionDto>().ReverseMap();
+            CreateMap<WeatherLog, WeatherLogDto>().ReverseMap();
         }
     }
 
