@@ -1,0 +1,6 @@
+@ClimFit.Api_HostAddress = http://localhost:5150
+
+GET {{ClimFit.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,11 +1,11 @@
 ﻿version: '3.4'
 
 services:
-  CoreArchitecture.api:
-    image: ${DOCKER_REGISTRY-}CoreArchitectureapi
+  ClimFit.api:
+    image: ${DOCKER_REGISTRY-}ClimFitapi
     build:
       context: .
-      dockerfile: CoreArchitecture.Api/Dockerfile
+      dockerfile: ClimFit.Api/Dockerfile
     ports:
      - "5000:5000" 
      - "5001:5001" 
