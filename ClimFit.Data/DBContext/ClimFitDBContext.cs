@@ -9,6 +9,10 @@ namespace ClimFit.Data.DBContext
         #region DBSets
         public DbSet<TestPerson> TestPerson { get; set; }
         public DbSet<TestDepartment> TestDepartment { get; set; }
+        public DbSet<ClothingItem> ClothingItem { get; set; }
+        public DbSet<OutfitItem> OutfitItem { get; set; }
+        public DbSet<OutfitSuggestion> OutfitSuggestion { get; set; }
+        public DbSet<WeatherLog> WeatherLog { get; set; }
    
 
         #endregion

@@ -15,4 +15,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ClimFit.Common\ClimFit.Common.csproj" />
+  </ItemGroup>
+
 </Project>
