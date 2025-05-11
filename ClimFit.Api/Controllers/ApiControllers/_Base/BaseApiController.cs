@@ -25,6 +25,7 @@ namespace ClimFit.Api.Controllers.ApiControllers
 
     [ApiController]
     [Route(ApplicationConstants.ApiRoutePrefix + "/[controller]")]
+    [Authorize]
     public abstract class BaseApiController<TKey, TDto, TService> : ControllerBase
     where TDto : BaseDto<TKey>
     where TService : IEntityServiceManager<TDto, TKey>
@@ -203,7 +204,7 @@ namespace ClimFit.Api.Controllers.ApiControllers
 
         protected void SetCreationInfoOfDto(TDto dto)
         {
-            if (dto is AuditableDto auditableDto)
+            if (dto is AuditableDto<int> auditableDto)
             {
                 auditableDto.CreatedDate = DateTime.Now;
                 auditableDto.CreatorUserId = GetLoggedInUserId();
