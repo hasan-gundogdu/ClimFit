@@ -3,7 +3,7 @@ using ClimFit.Common.Enums;
 
 namespace ClimFit.Common.DTOs
 {
-    public class ClothingItemDto : AuditableDto
+    public class ClothingItemDto : AuditableDto<int>
     {
         public required string Name { get; set; }
         public ClothingCategory Category { get; set; }

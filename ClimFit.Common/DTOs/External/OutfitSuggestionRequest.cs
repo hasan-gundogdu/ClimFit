@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 namespace ClimFit.Common.DTOs.External
+=======
+﻿namespace ClimFit.Common.DTOs.External
+>>>>>>> c8fea66cd05dcb85502e1ba457521e6e35dc1a71
 {
     public class OutfitSuggestionRequest
     {

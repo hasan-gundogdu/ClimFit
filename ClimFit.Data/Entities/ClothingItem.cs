@@ -3,7 +3,8 @@ using ClimFit.Data.Entities.Base;
 
 namespace ClimFit.Data.Entities
 {
-    public class ClothingItem : AuditableEntity
+    public class ClothingItem : AuditableEntity<int>
+
     {
         public required string Name { get; set; }
         public ClothingCategory Category { get; set; }

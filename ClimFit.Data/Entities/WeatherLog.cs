@@ -2,7 +2,8 @@ using ClimFit.Data.Entities.Base;
 
 namespace ClimFit.Data.Entities
 {
-    public class WeatherLog : AuditableEntity
+    public class WeatherLog : AuditableEntity<int>
+
     {
         public required DateTime Date { get; set; }
         public required string Location { get; set; }
