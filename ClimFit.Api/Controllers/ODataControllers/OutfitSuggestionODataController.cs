@@ -3,7 +3,7 @@ using ClimFit.Common.DTOs;
 
 namespace ClimFit.Api.Controllers.ODataControllers
 {
-    public class OutfitSuggestionODataController : BaseODataController<OutfitSuggestionDto, IOutfitSuggestionEntityService>
+    public class OutfitSuggestionODataController : BaseODataController<int, OutfitSuggestionDto, IOutfitSuggestionEntityService>
     {
         private readonly IOutfitSuggestionEntityService _outfitSuggestionEntityService;
 
