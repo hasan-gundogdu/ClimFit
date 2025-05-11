@@ -11,6 +11,7 @@ namespace ClimFit.Infrastructure
             services.AddAuthServices();
             services.AddODataServices();
             services.AddSwaggerServices();
+            services.AddExternalServices();
 
             return services;
         }

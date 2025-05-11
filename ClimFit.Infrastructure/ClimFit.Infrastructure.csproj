@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ClimFit.Abstractions\ClimFit.Abstractions.csproj" />
     <ProjectReference Include="..\ClimFit.Common\ClimFit.Common.csproj" />
     <ProjectReference Include="..\ClimFit.Data\ClimFit.Data.csproj" />
   </ItemGroup>
