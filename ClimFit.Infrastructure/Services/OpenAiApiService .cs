@@ -33,18 +33,19 @@ namespace ClimFit.Infrastructure.Services
             var clothingList = string.Join("\n", request.ClothingItems.Select(x => $"- Id:{x.Id} {x.Name}"));
 
             var userPrompt = $@"
-Bugün hava {request.Temperature} derece ve {request.WeatherDescription}.
-Elimde şu kıyafetler var:
-{clothingList}
-
-Yalnızca bu kıyafetler arasından seçim yaparak uygun bir kombin öner. 
-Cevabında seçtiğin kıyafetlerin Id'lerini JSON formatında 'selectedClothingItemIds' alanında listele. 
-Ayrıca açıklamanı 'description' alanında döndür.
+            Bugün hava {request.Temperature} derece ve {request.WeatherDescription}.
+            Elimde şu kıyafetler var:
+            {clothingList}
+            
+            Yalnızca bu kıyafetler arasından seçim yaparak uygun bir kombin öner.Önereceğin kombin tam bir kombin olsun. Üst, iç üst, alt,aksesuar ve ayakkabıdan oluşsun.
+            Cevabında seçtiğin kıyafetlerin Id'lerini JSON formatında 'selectedClothingItemIds' alanında listele. 
+            Ayrıca açıklamanı 'description' alanında döndür.
 ";
 
             var openAiBody = new
             {
                 model = "gpt-3.5-turbo",
+                //model = "gpt-4o",
                 messages = new[]
                 {
                     new { role = "system", content = "Sen bir kıyafet kombin asistanısın." },

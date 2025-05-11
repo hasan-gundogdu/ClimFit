@@ -16,8 +16,8 @@ namespace ClimFit.Infrastructure.Extensions
             .AddJwtBearer(options =>
             {
 
-                options.Authority = "https://localhost:7110";
-                options.Audience = "climfit_45c078c9";
+                options.Authority = "https://demo-auth.infinextsoft.com";
+                options.Audience = "dolapp";
                 options.RequireHttpsMetadata = false;
             });
 
