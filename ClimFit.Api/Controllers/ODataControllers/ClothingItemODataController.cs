@@ -3,7 +3,7 @@ using ClimFit.Common.DTOs;
 
 namespace ClimFit.Api.Controllers.ODataControllers
 {
-    public class ClothingItemODataController : BaseODataController<ClothingItemDto, IClothingItemEntityService>
+    public class ClothingItemODataController : BaseODataController<int, ClothingItemDto, IClothingItemEntityService>
     {
         private readonly IClothingItemEntityService _clothingItemEntityService;
 

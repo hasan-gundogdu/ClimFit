@@ -7,10 +7,10 @@ using AutoMapper;
 
 namespace ClimFit.Business.EntityServices
 {
-    public class WeatherLogEntityService : BaseEntityService<WeatherLogDto, WeatherLog>, IWeatherLogEntityService
+    public class WeatherLogEntityService : BaseEntityService<WeatherLogDto, WeatherLog, int>, IWeatherLogEntityService
     {
-        private readonly IRepository<WeatherLog, Guid> _weatherLogRepository;
-        public WeatherLogEntityService(IRepository<WeatherLog, Guid> weatherLogRepository, IUnitOfWork unitOfWork, IMapper mapper) 
+        private readonly IRepository<WeatherLog, int> _weatherLogRepository;
+        public WeatherLogEntityService(IRepository<WeatherLog, int> weatherLogRepository, IUnitOfWork unitOfWork, IMapper mapper) 
             : base(weatherLogRepository, unitOfWork, mapper)
         {
             _weatherLogRepository = weatherLogRepository ?? throw new ArgumentNullException(nameof(weatherLogRepository));

@@ -19,12 +19,12 @@ namespace ClimFit.Infrastructure.Extensions
                 endpoints.MapControllers();
             });
 
-            if (autoMigration)
-            {
-                using var scope = app.ApplicationServices.CreateScope();
-                var serviceProvider = scope.ServiceProvider;
-                DatabaseInitializer.MigrateDataBase(serviceProvider);
-            }
+            //if (autoMigration)
+            //{
+            //    using var scope = app.ApplicationServices.CreateScope();
+            //    var serviceProvider = scope.ServiceProvider;
+            //    DatabaseInitializer.MigrateDataBase(serviceProvider);
+            //}
 
             return app;
         }

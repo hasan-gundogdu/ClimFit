@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.OData.Query;
 
 namespace ClimFit.Api.Controllers.ODataControllers
 {
-    public class WeatherLogODataController : BaseODataController<WeatherLogDto, IWeatherLogEntityService>
+    public class WeatherLogODataController : BaseODataController<int, WeatherLogDto, IWeatherLogEntityService>
     {
         private readonly IWeatherLogEntityService _weatherLogEntityService;
 

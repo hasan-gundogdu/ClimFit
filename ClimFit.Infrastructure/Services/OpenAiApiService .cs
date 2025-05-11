@@ -22,7 +22,7 @@ namespace ClimFit.Infrastructure.Services
                 throw new ArgumentException("Clothing items are required.");
             }
 
-            var apiKey = "REMOVED";
+            var apiKey = _configuration["OpenAI:ApiKey"];
             if (string.IsNullOrEmpty(apiKey))
             {
                 throw new InvalidOperationException("OpenAI API Key is not configured.");

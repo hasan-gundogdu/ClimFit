@@ -7,10 +7,10 @@ using AutoMapper;
 
 namespace ClimFit.Business.EntityServices
 {
-    public class OutfitItemEntityService : BaseEntityService<OutfitItemDto, OutfitItem>, IOutfitItemEntityService
+    public class OutfitItemEntityService : BaseEntityService<OutfitItemDto, OutfitItem, int>, IOutfitItemEntityService
     {
-        private readonly IRepository<OutfitItem, Guid> _outfitItemRepository;
-        public OutfitItemEntityService(IRepository<OutfitItem, Guid> outfitItemRepository, IUnitOfWork unitOfWork, IMapper mapper) 
+        private readonly IRepository<OutfitItem, int> _outfitItemRepository;
+        public OutfitItemEntityService(IRepository<OutfitItem, int> outfitItemRepository, IUnitOfWork unitOfWork, IMapper mapper) 
             : base(outfitItemRepository, unitOfWork, mapper)
         {
             _outfitItemRepository = outfitItemRepository ?? throw new ArgumentNullException(nameof(outfitItemRepository));

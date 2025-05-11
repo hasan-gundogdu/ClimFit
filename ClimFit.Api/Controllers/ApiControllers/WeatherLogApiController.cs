@@ -3,7 +3,7 @@ using ClimFit.Common.DTOs;
 
 namespace ClimFit.Api.Controllers.ApiControllers
 {
-    public class WeatherLogApiController : BaseApiController<WeatherLogDto, IWeatherLogEntityService>
+    public class WeatherLogApiController : BaseApiController<int, WeatherLogDto, IWeatherLogEntityService>
     {
         private readonly IWeatherLogEntityService _weatherLogService;
 
