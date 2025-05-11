@@ -14,11 +14,12 @@ namespace ClimFit.Infrastructure.Extensions
         {
             var defaultBatchHandler = new DefaultODataBatchHandler();
             defaultBatchHandler.MessageQuotas.MaxOperationsPerChangeset = 10;
+            var model = GetEdmModel();
             services.AddControllers().AddNewtonsoftJson().AddOData(options =>
             {
                 options.Expand().Select().Filter().OrderBy().Count().SetMaxTop(null).AddRouteComponents(
                 routePrefix: ApplicationConstants.ODataRoutePrefix,
-                model: GetEdmModel(),
+                model:model,
                 batchHandler: defaultBatchHandler);
             });
 

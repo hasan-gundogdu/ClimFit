@@ -1,6 +1,7 @@
 ﻿global using Microsoft.AspNetCore.Mvc;
 using ClimFit.Abstractions.BusinessEntityServiceInterfaces;
 using ClimFit.Common.DTOs._Base;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.OData.Deltas;
 using Microsoft.AspNetCore.OData.Formatter;
 using Microsoft.AspNetCore.OData.Query;
@@ -40,6 +41,7 @@ namespace ClimFit.Api.Controllers.ODataControllers
         /// <returns></returns>
         [HttpGet]
         [EnableQuery]
+        [Authorize]
         public virtual async Task<IActionResult> Get()
         {
             try

@@ -1,4 +1,5 @@
 ﻿using ClimFit.Data.Entities;
+using ClimFit.Data.Configurations;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -24,6 +25,15 @@ namespace ClimFit.Data.DBContext
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+            
+            // Apply configurations
+            modelBuilder.ApplyConfiguration(new WeatherLogConfiguration());
+            modelBuilder.ApplyConfiguration(new OutfitSuggestionConfiguration());
+            modelBuilder.ApplyConfiguration(new OutfitItemConfiguration());
+            modelBuilder.ApplyConfiguration(new ClothingItemConfiguration());
+            
+            // Apply other configurations from assembly
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
     }

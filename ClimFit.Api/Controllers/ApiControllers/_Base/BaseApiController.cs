@@ -1,6 +1,7 @@
 ﻿using ClimFit.Abstractions.BusinessEntityServiceInterfaces;
 using ClimFit.Common.Constants;
 using ClimFit.Common.DTOs._Base;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq.Expressions;
@@ -39,6 +40,7 @@ namespace ClimFit.Api.Controllers.ApiControllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        [Authorize]
         public virtual async Task<IActionResult> Get()
         {
             try

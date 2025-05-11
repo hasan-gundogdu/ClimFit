@@ -8,6 +8,7 @@ namespace ClimFit.Infrastructure
     {
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services)
         {
+            services.AddAuthServices();
             services.AddODataServices();
             services.AddSwaggerServices();
 

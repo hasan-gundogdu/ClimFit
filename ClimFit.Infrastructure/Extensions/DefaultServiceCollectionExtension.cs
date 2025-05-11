@@ -11,6 +11,7 @@ namespace ClimFit.Infrastructure.Extensions
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

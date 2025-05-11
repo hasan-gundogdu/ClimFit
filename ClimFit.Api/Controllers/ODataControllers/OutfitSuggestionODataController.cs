@@ -1,7 +1,5 @@
 using ClimFit.Abstractions.BusinessEntityServiceInterfaces;
 using ClimFit.Common.DTOs;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.OData.Query;
 
 namespace ClimFit.Api.Controllers.ODataControllers
 {

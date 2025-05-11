@@ -1,6 +1,5 @@
 using ClimFit.Abstractions.BusinessEntityServiceInterfaces;
 using ClimFit.Common.DTOs;
-using Microsoft.AspNetCore.Mvc;
 
 namespace ClimFit.Api.Controllers.ApiControllers
 {
