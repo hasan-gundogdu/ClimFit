@@ -11,5 +11,14 @@ namespace ClimFit.Api.Controllers.ApiControllers
         {
             _clothingItemService = clothingItemService;
         }
+
+        [HttpGet]
+        public async override Task<IActionResult> Get()
+        {
+            var clothes = await _clothingItemService.GetListAsync();
+            var list=clothes.ToList().Where(x => x.CreatorUserId == GetLoggedInUserId());
+
+            return Ok(list.ToList());
+        }
     }
 }
