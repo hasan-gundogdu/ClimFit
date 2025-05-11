@@ -9,6 +9,9 @@ namespace ClimFit.Data.Configurations
         public void Configure(EntityTypeBuilder<WeatherLog> builder)
         {
             builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id)
+                   .ValueGeneratedOnAdd()
+                   .HasDefaultValueSql("NEWID()");
             
             // One WeatherLog can have many OutfitSuggestions
             builder.HasMany<OutfitSuggestion>()
@@ -23,6 +26,9 @@ namespace ClimFit.Data.Configurations
         public void Configure(EntityTypeBuilder<OutfitSuggestion> builder)
         {
             builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id)
+                   .ValueGeneratedOnAdd()
+                   .HasDefaultValueSql("NEWID()");
 
             // One OutfitSuggestion belongs to one WeatherLog
             builder.HasOne<WeatherLog>()
@@ -43,6 +49,9 @@ namespace ClimFit.Data.Configurations
         public void Configure(EntityTypeBuilder<OutfitItem> builder)
         {
             builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id)
+                   .ValueGeneratedOnAdd()
+                   .HasDefaultValueSql("NEWID()");
 
             // One OutfitItem belongs to one OutfitSuggestion
             builder.HasOne<OutfitSuggestion>()
@@ -63,6 +72,9 @@ namespace ClimFit.Data.Configurations
         public void Configure(EntityTypeBuilder<ClothingItem> builder)
         {
             builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id)
+                   .ValueGeneratedOnAdd()
+                   .HasDefaultValueSql("NEWID()");
 
             // One ClothingItem can be used in many OutfitItems
             builder.HasMany<OutfitItem>()
