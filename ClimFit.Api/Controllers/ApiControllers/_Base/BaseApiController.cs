@@ -40,7 +40,7 @@ namespace ClimFit.Api.Controllers.ApiControllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [Authorize]
+        //[Authorize]
         public virtual async Task<IActionResult> Get()
         {
             try
