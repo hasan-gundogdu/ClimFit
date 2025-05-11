@@ -2,7 +2,8 @@ using ClimFit.Common.DTOs._Base;
 
 namespace ClimFit.Common.DTOs
 {
-    public class WeatherLogDto : AuditableDto
+    public class WeatherLogDto : AuditableDto<int>
+
     {
         public required DateTime Date { get; set; }
         public required string Location { get; set; }

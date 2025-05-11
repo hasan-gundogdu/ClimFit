@@ -11,6 +11,7 @@ namespace ClimFit.Infrastructure.Extensions
             services.AddHttpClient();
             services.AddScoped<IHttpRequestBase, HttpRequestBase>();
             services.AddScoped<IAuthApiService, AuthApiService>();
+            services.AddScoped<IOpenAiApiService, OpenAiApiService>();
 
             return services;
         }
