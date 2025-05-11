@@ -15,7 +15,8 @@ namespace ClimFit.Data.Migrations
                 name: "ClothingItem",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false, defaultValueSql: "NEWID()"),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Category = table.Column<int>(type: "int", nullable: false),
                     Material = table.Column<int>(type: "int", nullable: false),
@@ -58,7 +59,8 @@ namespace ClimFit.Data.Migrations
                 name: "WeatherLog",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false, defaultValueSql: "NEWID()"),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Location = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Temperature = table.Column<double>(type: "float", nullable: false),
@@ -107,9 +109,10 @@ namespace ClimFit.Data.Migrations
                 name: "OutfitSuggestion",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false, defaultValueSql: "NEWID()"),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    WeatherLogId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    WeatherLogId = table.Column<int>(type: "int", nullable: false),
                     SuggestedText = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IsLiked = table.Column<bool>(type: "bit", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
@@ -134,9 +137,10 @@ namespace ClimFit.Data.Migrations
                 name: "OutfitItem",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false, defaultValueSql: "NEWID()"),
-                    OutfitSuggestionId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ClothingItemId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    OutfitSuggestionId = table.Column<int>(type: "int", nullable: false),
+                    ClothingItemId = table.Column<int>(type: "int", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
                     CreatorUserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),

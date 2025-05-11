@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClimFit.Data.Migrations
 {
     [DbContext(typeof(ClimFitDBContext))]
-    [Migration("20250511130707_Initial")]
+    [Migration("20250511152240_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -27,10 +27,11 @@ namespace ClimFit.Data.Migrations
 
             modelBuilder.Entity("ClimFit.Data.Entities.ClothingItem", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier")
-                        .HasDefaultValueSql("NEWID()");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("Category")
                         .HasColumnType("int");
@@ -79,13 +80,14 @@ namespace ClimFit.Data.Migrations
 
             modelBuilder.Entity("ClimFit.Data.Entities.OutfitItem", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier")
-                        .HasDefaultValueSql("NEWID()");
+                        .HasColumnType("int");
 
-                    b.Property<Guid>("ClothingItemId")
-                        .HasColumnType("uniqueidentifier");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ClothingItemId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -105,8 +107,8 @@ namespace ClimFit.Data.Migrations
                     b.Property<Guid?>("ModifierUserId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("OutfitSuggestionId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("OutfitSuggestionId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -119,10 +121,11 @@ namespace ClimFit.Data.Migrations
 
             modelBuilder.Entity("ClimFit.Data.Entities.OutfitSuggestion", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier")
-                        .HasDefaultValueSql("NEWID()");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -152,8 +155,8 @@ namespace ClimFit.Data.Migrations
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("WeatherLogId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("WeatherLogId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -245,10 +248,11 @@ namespace ClimFit.Data.Migrations
 
             modelBuilder.Entity("ClimFit.Data.Entities.WeatherLog", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier")
-                        .HasDefaultValueSql("NEWID()");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");

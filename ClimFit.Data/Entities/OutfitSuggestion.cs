@@ -6,7 +6,7 @@ namespace ClimFit.Data.Entities
 
     {
         public required Guid UserId { get; set; }  // Identity user ID
-        public required Guid WeatherLogId { get; set; }
+        public required int WeatherLogId { get; set; }
 
         public required string SuggestedText { get; set; }
         public bool IsLiked { get; set; }
