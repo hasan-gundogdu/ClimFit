@@ -44,8 +44,8 @@ namespace ClimFit.Infrastructure.Services
 
             var openAiBody = new
             {
-                model = "gpt-3.5-turbo",
-                //model = "gpt-4o",
+                //model = "gpt-3.5-turbo",
+                model = "gpt-4o",
                 messages = new[]
                 {
                     new { role = "system", content = "Sen bir kıyafet kombin asistanısın." },
