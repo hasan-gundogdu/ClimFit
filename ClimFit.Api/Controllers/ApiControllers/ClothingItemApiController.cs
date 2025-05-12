@@ -22,7 +22,7 @@ namespace ClimFit.Api.Controllers.ApiControllers
             return Ok(res);
         }
         [HttpGet("GetItemsByUserIds")]
-        public async  Task<IActionResult> GetýtemsByUserIds(List<int> ids)
+        public async  Task<IActionResult> GetItemsByUserIds(List<int> ids)
         {
             var res = await (await _clothingItemService.GetWhereAsync(x => ids.Equals(x.Id))).ToListAsync();
             return Ok(res);
