@@ -11,5 +11,7 @@ namespace ClimFit.Api.Controllers.ODataControllers
         {
             _testDepartmentEntityService = testDepartmentEntityService;
         }
+
+      
     }
 }

@@ -1,5 +1,6 @@
 using ClimFit.Abstractions.BusinessEntityServiceInterfaces;
 using ClimFit.Common.DTOs;
+using Microsoft.EntityFrameworkCore;
 
 namespace ClimFit.Api.Controllers.ApiControllers
 {
@@ -15,10 +16,10 @@ namespace ClimFit.Api.Controllers.ApiControllers
         [HttpGet]
         public async override Task<IActionResult> Get()
         {
-            var clothes = await _clothingItemService.GetListAsync();
-            var list=clothes.ToList().Where(x => x.CreatorUserId == GetLoggedInUserId());
+            var userId = GetLoggedInUserId();
+            var res =await (await _clothingItemService.GetWhereAsync(x => x.CreatorUserId == GetLoggedInUserId())).ToListAsync();
 
-            return Ok(list.ToList());
+            return Ok(res);
         }
     }
 }

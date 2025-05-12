@@ -15,7 +15,7 @@ namespace ClimFit.Api.Controllers.ApiControllers
         [HttpGet]
         public async override Task<IActionResult> Get()
         {
-            var res = await _testDepartmentEntityService.GetWhereAsync(x => x.Name.Contains("test"));
+            var res = await _testDepartmentEntityService.GetWhereAsync(x => x.IsDeleted == false);
             return Ok(res);
         }
     }
