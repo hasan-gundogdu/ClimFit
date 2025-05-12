@@ -17,8 +17,14 @@ namespace ClimFit.Api.Controllers.ApiControllers
         public async override Task<IActionResult> Get()
         {
             var userId = GetLoggedInUserId();
-            var res =await (await _clothingItemService.GetWhereAsync(x => x.CreatorUserId == GetLoggedInUserId())).ToListAsync();
+            var res =await (await _clothingItemService.GetWhereAsync(x => x.CreatorUserId == userId)).ToListAsync();
 
+            return Ok(res);
+        }
+        [HttpGet("GetItemsByUserIds")]
+        public async  Task<IActionResult> GetýtemsByUserIds(List<int> ids)
+        {
+            var res = await (await _clothingItemService.GetWhereAsync(x => ids.Equals(x.Id))).ToListAsync();
             return Ok(res);
         }
     }
