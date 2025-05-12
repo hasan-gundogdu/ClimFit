@@ -21,10 +21,11 @@ namespace ClimFit.Api.Controllers.ApiControllers
 
             return Ok(res);
         }
-        [HttpGet("GetItemsByUserIds")]
+        [HttpPost("GetItemsByUserIds")]
         public async  Task<IActionResult> GetItemsByUserIds(List<int> ids)
         {
-            var res = await (await _clothingItemService.GetWhereAsync(x => ids.Equals(x.Id))).ToListAsync();
+            var res = await (await _clothingItemService.GetWhereAsync(x => ids.Contains(x.Id))).ToListAsync();
+            
             return Ok(res);
         }
     }
